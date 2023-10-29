@@ -25,4 +25,20 @@ public class Transaction implements Serializable {
 
     @Column(name = "is_expired")
     private Boolean isExpired;
+
+    public Transaction(User user, Ticket ticket) {
+        this.user = user;
+        this.ticket = ticket;
+        this.isExpired = false;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", user=" + user +
+                ", ticket=" + ticket +
+                ", isExpired=" + isExpired +
+                '}';
+    }
 }

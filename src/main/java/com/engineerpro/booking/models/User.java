@@ -25,4 +25,12 @@ public class User implements Serializable {
     public User(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

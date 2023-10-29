@@ -18,4 +18,26 @@ public class Ticket {
 
     @ManyToOne
     private TicketType type;
+
+    @NonNull
+    @Column(name = "is_available")
+    private Boolean isAvailable;
+
+    @Version
+    private Integer version;
+
+    public Ticket(TicketType newTicketType) {
+        type = newTicketType;
+        isAvailable = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", type=" + type +
+                ", isAvailable=" + isAvailable +
+                ", version=" + version +
+                '}';
+    }
 }

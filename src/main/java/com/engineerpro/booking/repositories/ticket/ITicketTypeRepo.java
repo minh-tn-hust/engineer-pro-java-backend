@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ITicketTypeRepo extends JpaRepository<TicketType, Integer> {
     TicketType getTicketTypeById(Integer id);
+
+    TicketType getTicketTypeByType(String type);
 }
