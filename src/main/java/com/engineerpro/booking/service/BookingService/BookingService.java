@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Random;
 
-public class BookingService {
+public abstract class BookingService {
     @Autowired
     protected EntityManager entityManager;
 
@@ -56,9 +56,7 @@ public class BookingService {
         return ticket.get(index % ticket.size());
     }
 
-    public void processBookingTicket(Ticket ticket) {
-
-    };
+    abstract public void processBookingTicket(Ticket ticket);
 
     public void createTransaction(User user, Ticket ticket) {
        Transaction newTransaction = new Transaction(user, ticket);
